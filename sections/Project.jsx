@@ -13,7 +13,7 @@ const projectData = [
         techStack: ["React", "JavaScript", "CSS3"],
         image: "currency.png", 
         githubLink: "https://github.com/Dilip91381/Currency",
-        liveLink: "#",
+        liveLink: "https://vercel.com/dilip13/currency_convertor",
     },
     {
         title: "Quickcart",
