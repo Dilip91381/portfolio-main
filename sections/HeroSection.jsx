@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaLinkedinIn, FaGithub, FaCheck, FaArrowRight, FaInstagram, FaFolderOpen, FaUserTie, FaMicrochip } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaArrowRight, FaInstagram, FaFolderOpen, FaUserTie, FaMicrochip } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { BsDownload } from 'react-icons/bs';
 import { BiCodeAlt } from 'react-icons/bi';
@@ -43,7 +43,6 @@ const TYPING_PHRASES = [
 ];
 
 const HeroSection = () => {
-    const [downloaded, setDownloaded] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
     // Typing Animation States
@@ -80,22 +79,6 @@ const HeroSection = () => {
 
         return () => clearTimeout(typingTimeout);
     }, [currentText, isDeleting, phraseIndex]);
-
-    const handleDownloadResume = () => {
-        const fileUrl = "";
-        const link = document.createElement("a");
-        link.href = fileUrl;
-        link.download = "Dilip_Kumar_Resume_DataScience.docx";
-        link.target = "_blank";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        setDownloaded(true);
-        setTimeout(() => {
-            setDownloaded(false);
-        }, 2000);
-    };
 
     // Helper function for staggered fade-up animations
     const fadeUp = (delayClass) =>
@@ -156,17 +139,15 @@ const HeroSection = () => {
 
                         {/* Buttons */}
                         <div className={`flex flex-wrap gap-4 pt-4 ${fadeUp('delay-500')}`}>
-                            <button
-                                onClick={handleDownloadResume}
+                            <a
+                                href="https://res.cloudinary.com/akeyuadm/image/upload/v1791193806/Dilip_Resu.pdf"
+                                target="_blank"
+                                rel="noreferrer"
                                 className="flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:-translate-y-1"
                             >
-                                {downloaded ? (
-                                    <FaCheck className="text-lg text-green-300 animate-bounce" />
-                                ) : (
-                                    <BsDownload className="text-lg" />
-                                )}
-                                {downloaded ? "Downloaded!" : "Download Resume"}
-                            </button>
+                                <BsDownload className="text-lg" />
+                                View Resume
+                            </a>
 
                             <a
                                 href="#projects"
