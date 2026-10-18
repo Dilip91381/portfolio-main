@@ -19,9 +19,9 @@ const projectData = [
         title: "Quickcart",
         description: "A comprehensive full-stack capstone web application. Built with a robust backend architecture, seamless database integration, and deployed live on the Render platform.",
         techStack: ["React", "Node.js", "MongoDB", "Render"],
-        image: "c:\Users\dilip\Pictures\Screenshots\quickcart.png",
+        image: "/quickcart.png",
         githubLink: "https://github.com/Dilip91381/quickcart-dashboard",
-        liveLink: "https://capstone-project-shop-hub.onrender.com",
+        liveLink: "https://quickcartdashboard.vercel.app/",
     },
     {
         title: "Weather App",
