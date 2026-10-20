@@ -6,33 +6,35 @@ const certificateData = [
         id: 1,
         title: "MERN Stack Development",
         issuer: "Microsoft & GNC",
-        image: "mern.png", 
+        image: "mern.png",
     },
     {
         id: 2,
-        title: "Intro to Retrieval Augmented Generation",
-        issuer: "IBM SkillsBuild",
-        image: "rag.png",
+        title: "GenAI Powered Data Analytics Job Simulation",
+        issuer: "Tata & Forage",
+        image: "tata.png",
     },
     {
         id: 3,
         title: "Techinertia 3.0 Hackathon",
         issuer: "Unstop",
-        image: "unstop.png",
+        image: "hackathon.png",
     },
     {
         id: 4,
         title: "Data Science Seminar",
         issuer: "Appwars Technologies",
-        image: "appwars.png",
+        image: "Appwars.png",
     },
     {
         id: 5,
-        title: "Machine Learning using Python",
-        issuer: "SkillCircle",
-        image: "skillcircle.png",
+        title: "Full Stack Development Internship",
+        issuer: "Thiranex",
+        image: "traning_certificate.png",
     }
 ];
+
+const getCertificateUrl = (image) => `${import.meta.env.BASE_URL}${image}`;
 
 const Certifications = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -119,7 +121,7 @@ const Certifications = () => {
                                 <div className="w-full h-48 md:h-64 rounded-xl overflow-hidden relative border border-gray-200 dark:border-[#1e2d4a]/50 bg-gray-50 dark:bg-black/40 flex items-center justify-center transition-colors duration-300">
                                     
                                     <img 
-                                        src={cert.image} 
+                                        src={getCertificateUrl(cert.image)} 
                                         alt={cert.title} 
                                         className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 p-1"
                                     />
@@ -127,7 +129,7 @@ const Certifications = () => {
                                     {/* Hover Overlay with View Button */}
                                     <div className="absolute inset-0 bg-white/80 dark:bg-[#050914]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm z-10">
                                         <a 
-                                            href={cert.image} 
+                                            href={getCertificateUrl(cert.image)} 
                                             target="_blank" 
                                             rel="noreferrer"
                                             className="px-5 py-2.5 bg-[#38bdf8] text-gray-900 dark:text-[#050914] rounded-full font-bold text-sm flex items-center gap-2 hover:bg-blue-600 dark:hover:bg-white hover:text-white dark:hover:text-[#050914] transition-colors duration-300 hover:scale-105 transform shadow-[0_0_15px_rgba(56,189,248,0.4)]"
