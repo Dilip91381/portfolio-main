@@ -29,18 +29,6 @@ const Experience = () => {
 
     const experiences = [
         {
-            id: 1,
-            role: "Google Student Ambassador",
-            company: "Google",
-            duration: "March - Present",
-            logo: "google.png",
-            description: [
-                "Evangelizing Google technologies and fostering a strong developer culture on campus.",
-                "Organizing technical workshops and hackathons for student developers.",
-                "Acting as a liaison between the university and Google's developer ecosystem."
-            ]
-        },
-        {
             id: 2,
             role: "Software Development Intern",
             company: "Technical Crooks",
