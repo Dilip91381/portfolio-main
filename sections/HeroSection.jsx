@@ -140,13 +140,12 @@ const HeroSection = () => {
                         {/* Buttons */}
                         <div className={`flex flex-wrap gap-4 pt-4 ${fadeUp('delay-500')}`}>
                             <a
-                                href="https://res.cloudinary.com/akeyuadm/image/upload/v1791193806/Dilip_Resu.pdf"
-                                target="_blank"
-                                rel="noreferrer"
+                                href="https://res.cloudinary.com/akeyuadm/image/upload/fl_attachment/v1791193806/Dilip_Resu.pdf"
+                                download="Dilip_Resume.pdf"
                                 className="flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:-translate-y-1"
                             >
                                 <BsDownload className="text-lg" />
-                                View Resume
+                                Download Resume
                             </a>
 
                             <a

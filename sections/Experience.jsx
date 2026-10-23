@@ -30,14 +30,12 @@ const Experience = () => {
     const experiences = [
         {
             id: 2,
-            role: "Software Development Intern",
-            company: "Technical Crooks",
-            duration: "May - July",
-            logo: "tc.png",
+            role: "Full Stack Developer Intern",
+            company: "Thiranex",
+            duration: "14 June - 13 July, 2026",
+            logo: "traning_certificate.png",
             description: [
-                "Collaborated on building robust web applications and optimizing frontend performance.",
-                "Wrote clean, maintainable code and participated in daily stand-ups and code reviews.",
-                "Assisted in debugging and deploying new features to production environments."
+                "Completed a Full Stack Development internship at Thiranex."
             ]
         }
     ];
