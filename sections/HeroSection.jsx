@@ -44,6 +44,7 @@ const TYPING_PHRASES = [
 
 const HeroSection = () => {
     const [isMounted, setIsMounted] = useState(false);
+    const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
     // Typing Animation States
     const [currentText, setCurrentText] = useState("");
@@ -84,6 +85,13 @@ const HeroSection = () => {
     const fadeUp = (delayClass) =>
         `transform transition-all duration-1000 ease-out ${isMounted ? `opacity-100 translate-y-0 ${delayClass}` : 'opacity-0 translate-y-8'}`;
 
+    const handlePointerMove = (event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width - 0.5) * 18;
+        const y = ((event.clientY - rect.top) / rect.height - 0.5) * -18;
+        setPointer({ x, y });
+    };
+
     return (
         <>
             {/* Inline styles for custom floating animation on the code box */}
@@ -98,12 +106,23 @@ const HeroSection = () => {
             `}</style>
 
             {/* ================= HERO SECTION ================= */}
-            <section id="home" className="relative w-full min-h-screen bg-transparent text-gray-900 dark:text-white flex items-center justify-center overflow-hidden font-sans pt-24 md:pt-28 pb-12 scroll-mt-24 transition-colors duration-300">
+            <section
+                id="home"
+                className="relative w-full min-h-screen bg-transparent text-gray-900 dark:text-white flex items-center justify-center overflow-hidden font-sans pt-24 md:pt-28 pb-12 scroll-mt-24 transition-colors duration-300"
+                onMouseMove={handlePointerMove}
+                onMouseLeave={() => setPointer({ x: 0, y: 0 })}
+            >
 
                 {/* --- Background Elements --- */}
                 <div className={`absolute inset-0 z-0 opacity-5 dark:opacity-10 transition-opacity duration-1000 bg-[radial-gradient(#000000_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[size:40px_40px] ${isMounted ? 'opacity-5 dark:opacity-10' : 'opacity-0'}`}></div>
 
-                <div className={`absolute top-1/2 right-[15%] -translate-y-1/2 w-[600px] h-[600px] bg-blue-200 dark:bg-[#1a3673] rounded-full blur-[120px] transition-opacity duration-1000 delay-500 z-0 pointer-events-none ${isMounted ? 'opacity-40 dark:opacity-60' : 'opacity-0'}`}></div>
+                <div
+                    className={`absolute top-1/2 right-[15%] -translate-y-1/2 w-[600px] h-[600px] bg-blue-200 dark:bg-[#1a3673] rounded-full blur-[120px] transition-opacity duration-1000 delay-500 z-0 pointer-events-none ${isMounted ? 'opacity-40 dark:opacity-60' : 'opacity-0'}`}
+                    style={{
+                        transform: `translateY(-50%) translateX(${pointer.x * 1.5}px) scale(${1 + Math.abs(pointer.x) * 0.02})`,
+                        background: `radial-gradient(circle at ${50 + pointer.x * 2}% ${50 + pointer.y * 2}%, rgba(96,165,250,0.8), rgba(37,99,235,0.4) 30%, rgba(37,99,235,0.1) 70%, transparent 100%)`
+                    }}
+                ></div>
 
                 <div className="container mx-auto px-6 py-8 md:py-12 mt-0 md:-mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 max-w-7xl">
 
@@ -112,7 +131,7 @@ const HeroSection = () => {
 
                         <div className={`inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-blue-200 dark:border-[#1e2d4a] bg-blue-50/50 dark:bg-[#0c162d]/50 text-sm text-gray-700 dark:text-gray-300 w-fit backdrop-blur-sm transition-colors duration-300 ${fadeUp('delay-100')}`}>
                             <span className="w-2.5 h-2.5 rounded-full bg-[#38bdf8] shadow-[0_0_8px_#38bdf8] animate-pulse"></span>
-                            Available for Opportunities
+                            Available for opportunities
                         </div>
 
                         <div className={`space-y-2 ${fadeUp('delay-200')}`}>
@@ -164,7 +183,7 @@ const HeroSection = () => {
                             <a href="https://github.com/Dilip91381" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#1e2d4a]/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#38bdf8] dark:hover:text-[#38bdf8] hover:scale-110 transition-all duration-300"><FaGithub /></a>
                             <a href="https://www.instagram.com/dilip91381?igsi=ZnBzbmlubXY5bmZr" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#1e2d4a]/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#38bdf8] dark:hover:text-[#38bdf8] hover:scale-110 transition-all duration-300"><FaInstagram /></a>
                             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dilipkumar91381%40gmail.com" target="_blank" rel="noreferrer" aria-label="Email Dilip Kumar with Gmail" title="Email Dilip Kumar with Gmail" className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#1e2d4a]/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#38bdf8] dark:hover:text-[#38bdf8] hover:scale-110 transition-all duration-300"><SiGmail /></a>
-                            <a href="https://leetcode.com/u/Dilipkumarverma/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#1e2d4a]/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#38bdf8] dark:hover:text-[#38bdf8] hover:scale-110 transition-all duration-300">< SiLeetcode /></a>
+                            <a href="https://leetcode.com/u/Dilipkumarverma/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-gray-200 dark:bg-[#1e2d4a]/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-[#38bdf8] dark:hover:text-[#38bdf8] hover:scale-110 transition-all duration-300"><SiLeetcode /></a>
                         </div>
                     </div>
 
@@ -172,7 +191,12 @@ const HeroSection = () => {
                     <div className={`relative flex justify-center items-center h-full w-full mt-16 lg:mt-0 group transition-all duration-1000 delay-[500ms] ease-out ${isMounted ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
 
                         {/* Profile Image */}
-                        <div className="relative z-10 w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-2 border-gray-300 dark:border-[#1e2d4a] shadow-[0_0_30px_rgba(37,99,235,0.2)] transition-colors duration-300">
+                        <div
+                            className="relative z-10 w-[320px] h-[320px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-2 border-gray-300 dark:border-[#1e2d4a] shadow-[0_0_30px_rgba(37,99,235,0.2)] transition-all duration-300 ease-out hover:scale-[1.02]"
+                            style={{
+                                transform: `perspective(1200px) rotateX(${pointer.y}deg) rotateY(${pointer.x}deg) translateY(${Math.abs(pointer.y) * 0.5}px)`
+                            }}
+                        >
                             <img
                                 src="profile_pic.png"
                                 alt="Dilip kumar"
