@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+  <defs>
+    <linearGradient id="background" x1="110" y1="25" x2="1090" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111B49"/>
+      <stop offset="1" stop-color="#050914"/>
+    </linearGradient>
+    <linearGradient id="ship" x1="600" y1="315" x2="600" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="600" y1="195" x2="600" y2="315" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity=".8"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="1200" height="600" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v600H0z"/>
+  <path fill="#38BDF8" fill-opacity=".15" filter="url(#glow)" d="M520 155h160v205H520z"/>
+  <g fill="#D9F4FF">
+    <circle cx="106" cy="92" r="2"/><circle cx="214" cy="186" r="3"/><circle cx="310" cy="74" r="2"/>
+    <circle cx="420" cy="221" r="2"/><circle cx="508" cy="99" r="3"/><circle cx="695" cy="74" r="2"/>
+    <circle cx="802" cy="167" r="3"/><circle cx="915" cy="94" r="2"/><circle cx="1088" cy="142" r="3"/>
+    <circle cx="113" cy="330" r="3"/><circle cx="285" cy="442" r="2"/><circle cx="417" cy="365" r="3"/>
+    <circle cx="771" cy="411" r="2"/><circle cx="911" cy="337" r="3"/><circle cx="1068" cy="459" r="2"/>
+  </g>
+  <path d="M560 310 600 188l40 122z" fill="url(#beam)" opacity=".55"/>
+  <g stroke="#FB7185" stroke-width="8">
+    <path d="m330 170 38 38m0-38-38 38"/>
+    <path d="m844 220 38 38m0-38-38 38"/>
+  </g>
+  <g fill="#7C3AED" stroke="#C4B5FD" stroke-width="5">
+    <path d="m335 310 41-34 48 20 18 50-28 40-58-4-34-30z"/>
+    <path d="m822 390 35-44 55 7 27 43-19 47-57 13-42-27z"/>
+  </g>
+  <path d="m600 318 90 120-45-8-45 43-45-43-45 8z" fill="url(#ship)" stroke="#BAF3FF" stroke-width="6" stroke-linejoin="round"/>
+  <path d="m585 428 15 43 15-43z" fill="#FB923C"/>
+  <path d="M522 520h156" stroke="#38BDF8" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+  <text x="56" y="65" fill="#7DD3FC" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">SPACE SHOOTER</text>
+  <text x="56" y="96" fill="#94A3B8" font-family="Arial, sans-serif" font-size="15" letter-spacing="2">ARCADE • SURVIVE • SCORE</text>
+  <text x="1015" y="65" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17" font-weight="700">SCORE  1200</text>
+</svg>

@@ -8,6 +8,14 @@ const resolveLink = (link) => {
 
 const projectData = [
     {
+        title: "Space Shooter",
+        description: "A browser-based arcade game where you pilot a spaceship, shoot incoming enemies, dodge collisions, and aim for a high score.",
+        techStack: ["HTML5", "CSS3", "JavaScript"],
+        image: "/space-shooter.svg",
+        githubLink: "https://github.com/Dilip91381/space-shooter",
+        liveLink: "https://space-shooter-game-azure.vercel.app/",
+    },
+    {
         title: "Currency Converter",
         description: "A simple yet effective currency conversion application with a clean and intuitive user interface.",
         techStack: ["React", "JavaScript", "CSS3"],
