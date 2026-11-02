@@ -36,7 +36,7 @@
 <p align="center">
   <img src="./public/light-mode.png" alt="Light Mode" width="45%" />
   &nbsp; &nbsp; &nbsp;
-  <img src="c:\Users\dilip\Pictures\Screenshots\Screenshot 2026-11-02 075202.pngt" alt="Dark Mode" width="45%" />
+  <img src="./public/dark-mode.png" alt="Dark Mode" width="45%" />
 </p>
 
 ### Projects Showcase
