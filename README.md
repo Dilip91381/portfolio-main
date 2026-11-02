@@ -34,9 +34,9 @@
 
 ### Light Mode vs Dark Mode
 <p align="center">
-  <img src="https://via.placeholder.com/400x250?text=Light+Mode+Screenshot" alt="Light Mode" width="45%" />
+  <img src="./public/light-mode.png" alt="Light Mode" width="45%" />
   &nbsp; &nbsp; &nbsp;
-  <img src="https://via.placeholder.com/400x250?text=Dark+Mode+Screenshot" alt="Dark Mode" width="45%" />
+  <img src="c:\Users\dilip\Pictures\Screenshots\Screenshot 2026-11-02 075202.pngt" alt="Dark Mode" width="45%" />
 </p>
 
 ### Projects Showcase
