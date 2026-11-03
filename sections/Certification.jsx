@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaEye } from 'react-icons/fa';
 
 const certificateData = [
@@ -49,13 +49,14 @@ const Certifications = () => {
             { threshold: 0.1 } 
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const section = sectionRef.current;
+        if (section) {
+            observer.observe(section);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (section) {
+                observer.unobserve(section);
             }
         };
     }, []);
@@ -81,6 +82,11 @@ const Certifications = () => {
                         width: max-content;
                         animation: scrollX 50s linear infinite; 
                     }
+                    @media (max-width: 767px) {
+                        .animate-marquee {
+                            animation: none;
+                        }
+                    }
                     /* Pause animation when user hovers over the track */
                     .animate-marquee:hover {
                         animation-play-state: paused;
@@ -101,7 +107,12 @@ const Certifications = () => {
             </div>
 
             {/* Marquee Track Container (Full Width) */}
-            <div className="relative w-full overflow-hidden flex">
+            <div
+                className="relative w-full flex overflow-x-auto overflow-y-hidden md:overflow-hidden snap-x snap-mandatory scroll-smooth"
+                role="region"
+                aria-label="Certificates and achievements"
+                tabIndex={0}
+            >
                 
                 {/* Fade Gradients on the left and right edges */}
                 <div className="absolute top-0 left-0 w-24 md:w-40 h-full bg-gradient-to-r from-white dark:from-[#050914] to-transparent z-10 pointer-events-none transition-colors duration-300"></div>
@@ -113,7 +124,7 @@ const Certifications = () => {
                         <div 
                             key={`${cert.id}-${index}`} 
                             /* Decreased card width: w-[280px] md:w-[360px] */
-                            className="w-[280px] md:w-[360px] mx-3 md:mx-4 flex-shrink-0 group"
+                            className="w-[280px] md:w-[360px] mx-3 md:mx-4 flex-shrink-0 snap-center group"
                         >
                             <div className="flex flex-col h-full bg-white/60 dark:bg-[#0c162d]/40 backdrop-blur-md border border-gray-200 dark:border-[#1e2d4a]/50 rounded-2xl p-5 md:p-6 hover:border-[#38bdf8] dark:hover:border-[#38bdf8]/60 transition-all duration-300 hover:bg-white/90 dark:hover:bg-[#0c162d]/80 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]">
                                 
