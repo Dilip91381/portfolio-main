@@ -1,4 +1,4 @@
-# Dilip kumar| Personal Portfolio 🚀
+    # Dilip kumar| Personal Portfolio 🚀
 
 > A fully responsive, modern personal portfolio built to showcase my projects, experience, and technical skills as a software developer. 
 
@@ -53,5 +53,6 @@ Make sure you have Node.js and npm installed on your system.
 
 1. **Clone the repository:**
    ```bash
+Thanku
 
        
