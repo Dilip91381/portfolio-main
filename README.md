@@ -53,6 +53,6 @@ Make sure you have Node.js and npm installed on your system.
 
 1. **Clone the repository:**
    ```bash
-Thanku
+
 
        
